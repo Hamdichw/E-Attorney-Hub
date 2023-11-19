@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-plain">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="row">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search by name" />
+              <div class="input-group-append">
+                <button class="input-group-text p-2  " style="background-color: fbc658;" (click)="dialog('submit' ,client)">Add Client</button>
+              </div>
+              
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let filteredClient of filterClients()">
+                {{ filteredClient.name }} - {{ filteredClient.accusation }} - {{ filteredClient.address }} - {{
+                filteredClient.phone }}
+              </li>
+            </ul>
+            <!-- <div class="col-4">
+                <button (click)="dialog('submit' ,client)" class="btn btn-success">Add!</button>
+              </div> -->
+          </div>
+        </div>
+
+      </div>
+      <div class="card-body">
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="table table-sm">
+            <thead  style="position: sticky; top: 0;  background-color: #F4F3EF; z-index: 1;" class="text-primary" >
+              <th>
+                NAME
+              </th>
+              <th>
+                ACCUSATION
+              </th>
+              <th>
+                ADDRESS
+              </th>
+              <th>
+                PHONE
+              </th>
+              <th class="text-right">
+
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of Clients; let i = index">
+                <td style="cursor: pointer;"  routerLink="chat">{{ c.name }} </td>
+                <td>{{ c.accusation }}</td>
+                <td>{{ c.address }}</td>
+                <td>{{ c.phone }}</td>
+                <td class="text-right">
+                  <i class="nc-icon nc-ruler-pencil text-success" style="cursor: pointer; margin-left: 10px;"
+                    (click)="dialog('edit',c)"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

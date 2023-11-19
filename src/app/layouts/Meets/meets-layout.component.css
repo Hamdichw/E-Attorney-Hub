@@ -1,0 +1,34 @@
+
+nav {
+    display: flex;
+    background-color: #F4F3EF;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  a {
+    font-size: large;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  a:hover {
+    color: #555;
+  }
+  
+  .active {
+    font-weight: bold;
+    color: #bfa75d;
+    border-bottom: 2px solid black;
+  }
+  

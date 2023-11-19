@@ -1,0 +1,15 @@
+.channel-container {
+  position: relative; /* Set container position to relative */
+}
+stream-channel{
+  background-color: aqua;
+
+}
+stream-message-input,stream-channel-header {
+  position: fixed; /* Set position to fixed */
+  bottom: 20px; /* Adjust distance from bottom */
+  right: 20px; /* Adjust distance from right */
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}

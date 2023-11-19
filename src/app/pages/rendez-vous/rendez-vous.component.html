@@ -1,0 +1,61 @@
+<section id="rendez-vous">
+  <div class="row">
+    <div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="title">Meet Title</label>
+            <div class="input-group ">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><input type="color"
+                    class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+                    title="Choose your color"></span>
+              </div>
+              <input type="text" class="form-control" id="title" placeholder="Enter meet title" name="title" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="start">Start Date and Time</label>
+            <input type="datetime-local" class="form-control" id="start" name="start" required>
+          </div>
+        </div>
+
+
+        <div class="col-6">
+          <div class="form-group">
+            <label for="end">End Date and Time</label>
+            <input type="datetime-local" class="form-control" id="end" name="end" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button  class="btn btn-block" style="background-color:#bfa75d ;">Add A New Meet</button>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="md-switching-view-cont">
+      <mbsc-eventcalendar [data]="myEvents" [view]="calView" [headerTemplate]="customTemplate">
+        <ng-template #customTemplate>
+          <mbsc-calendar-nav class="cal-header-nav"></mbsc-calendar-nav>
+          <div class="mbsc-flex mbsc-flex-1-0 mbsc-justify-content-center">
+            <mbsc-segmented-group [(ngModel)]="view" (change)="changeView()">
+              <mbsc-segmented value="month" icon="material-event-note"></mbsc-segmented>
+              <mbsc-segmented value="week" icon="material-date-range"></mbsc-segmented>
+              <mbsc-segmented value="day" icon="material-view-day"></mbsc-segmented>
+            </mbsc-segmented-group>
+          </div>
+          <mbsc-calendar-prev class="cal-header-prev"></mbsc-calendar-prev>
+          <mbsc-calendar-next class="cal-header-next"></mbsc-calendar-next>
+        </ng-template>
+      </mbsc-eventcalendar>
+    </div>
+  </div>
+
+</section>

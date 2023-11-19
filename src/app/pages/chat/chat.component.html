@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-12 channel-container">
+      <div>
+        <stream-channel>
+          <stream-channel-header style="position: sticky;   z-index: 1;">
+            <button class="btn "
+              style="background-color: #bfa75d;  " routerLink="/auth/client">
+              ⬅
+            </button>
+          </stream-channel-header>
+          <stream-message-list class="scroll" style="max-height: 380px; overflow-y: auto;"></stream-message-list>
+          <stream-notification-list></stream-notification-list>
+
+          <stream-thread name="thread">
+            <stream-message-list mode="thread"></stream-message-list>
+            <stream-message-input mode="thread"></stream-message-input>
+          </stream-thread>
+          <stream-message-input style="position: sticky;  z-index: 1;"></stream-message-input>
+        </stream-channel>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+  <button (click)="dialog('submit' ,transaction)" class="btn " style="background-color: #bfa75d;">Add Transaction</button>
+</div>
+ <div class="row">
+    <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header">
+            <h4 class="card-title"> Transactions</h4>
+            <p class="card-category"> Here is a subtitle for this table</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-sm">
+                <thead class=" text-primary">
+                  <th>
+                    AMMOUNT
+                  </th>
+                  <th>
+                    TYPE
+                  </th>
+                  <th>
+                    DATE
+                  </th>
+                  
+                  <th class="text-right">
+                    
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let t of transactions; let i = index">
+                    <td>
+                      {{t.ammount}}
+                    </td>
+                    <td>
+                      <button [class.btn-success]="t.type === 'Income'" [class.btn-danger]="t.type !== 'Income'" class="btn">{{ t.type }}</button>
+                    </td>
+                    <td>
+                      {{t.date}}
+                    </td>
+                    <td class="text-right">
+                        <i class="nc-icon nc-ruler-pencil text-success" style="cursor: pointer;" (click)="dialog('edit',t)"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

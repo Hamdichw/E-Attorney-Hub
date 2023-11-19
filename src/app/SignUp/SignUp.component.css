@@ -1,0 +1,18 @@
+.full{
+    height: 100vh;
+    width: 100vw;
+}
+
+.SignUp:hover{
+    background-color: rgb(111, 149, 187);
+}
+input{
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #000;
+	background: rgba(#bfa75d);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #000;
+}
