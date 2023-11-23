@@ -4,6 +4,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignUpComponent } from './SignUp/SignUp.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { AuthGuardService } from './Services/localService/localService/auth-guard.service';
 
 
 export const AppRoutes: Routes = [
@@ -19,6 +20,7 @@ export const AppRoutes: Routes = [
  {
     path: 'auth',
     component: AdminLayoutComponent,
+    canActivate:[AuthGuardService],
     children: [
         {
       path: '',

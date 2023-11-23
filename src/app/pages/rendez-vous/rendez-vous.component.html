@@ -40,22 +40,29 @@
     </div>
   </div>
   <div class="row">
-    <div class="md-switching-view-cont">
-      <mbsc-eventcalendar [data]="myEvents" [view]="calView" [headerTemplate]="customTemplate">
-        <ng-template #customTemplate>
-          <mbsc-calendar-nav class="cal-header-nav"></mbsc-calendar-nav>
-          <div class="mbsc-flex mbsc-flex-1-0 mbsc-justify-content-center">
-            <mbsc-segmented-group [(ngModel)]="view" (change)="changeView()">
-              <mbsc-segmented value="month" icon="material-event-note"></mbsc-segmented>
-              <mbsc-segmented value="week" icon="material-date-range"></mbsc-segmented>
-              <mbsc-segmented value="day" icon="material-view-day"></mbsc-segmented>
-            </mbsc-segmented-group>
-          </div>
-          <mbsc-calendar-prev class="cal-header-prev"></mbsc-calendar-prev>
-          <mbsc-calendar-next class="cal-header-next"></mbsc-calendar-next>
-        </ng-template>
-      </mbsc-eventcalendar>
+    <div class="d-flex justify-content-around">
+      <button  class="btn " style="background-color:#bfa75d ;"  (click)="filterTodayEvents()">Today</button>
+      <button  class="btn " style="background-color:#bfa75d ;" (click)="filterAllEvents()">All</button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-sm">
+          <thead  style="position: sticky; top: 0;  background-color: #F4F3EF; z-index: 1; padding-top: 10px;" class="text-primary" >
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Color</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let event of filteredEvents">
+              <td>{{ event.title }}</td>
+              <td>{{ event.start }}</td>
+              <td>{{ event.end }}</td>
+              <td [style.background-color]="event.color">{{ event.color }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
 </section>

@@ -42,6 +42,7 @@
         "express": "4.18.0",
         "jquery": "3.5.1",
         "moment": "2.29.1",
+        "ngx-cookie-service": "^17.0.0",
         "ngx-popperjs": "^14.1.8",
         "ngx-toastr": "14.3.0",
         "rxjs": "~7.5.0",
